@@ -1,0 +1,13 @@
+﻿{
+  "profiles": {
+    "ObjectMapper": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "api/Users",
+      "applicationUrl": "http://localhost:5000",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
