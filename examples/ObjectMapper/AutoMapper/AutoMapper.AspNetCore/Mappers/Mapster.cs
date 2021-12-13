@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 
-namespace ObjectMapper.Mappers
+namespace AutoMapper.AspNetCore.Mappers
 {
     public static class Mapster
     {

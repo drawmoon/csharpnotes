@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using AutoMapper.AspNetCore.Entities;
+using AutoMapper.AspNetCore.Mappers;
+using AutoMapper.AspNetCore.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using ObjectMapper.Entities;
-using ObjectMapper.Mappers;
-using ObjectMapper.Models;
 
-namespace ObjectMapper.Controllers
+namespace AutoMapper.AspNetCore.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

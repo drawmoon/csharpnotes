@@ -1,6 +1,6 @@
 ﻿{
   "profiles": {
-    "ObjectMapper": {
+    "AutoMapper.AspNetCore": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "api/Users",

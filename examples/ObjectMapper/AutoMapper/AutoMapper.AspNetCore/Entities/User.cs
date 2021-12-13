@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ObjectMapper.Entities;
 
-namespace ObjectMapper.Models
+namespace AutoMapper.AspNetCore.Entities
 {
-    public class UserDto
+    public class User
     {
         public string? Id { get; set; }
 

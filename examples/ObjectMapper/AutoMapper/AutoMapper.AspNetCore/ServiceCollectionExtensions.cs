@@ -4,9 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ObjectMapper.Mappers;
+using AutoMapper.AspNetCore.Mappers;
 
-namespace ObjectMapper
+namespace AutoMapper.AspNetCore
 {
     public static class ServiceCollectionExtensions
     {

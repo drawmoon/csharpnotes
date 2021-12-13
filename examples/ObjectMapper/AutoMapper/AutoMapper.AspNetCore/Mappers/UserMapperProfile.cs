@@ -3,10 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ObjectMapper.Entities;
-using ObjectMapper.Models;
+using AutoMapper.AspNetCore.Entities;
+using AutoMapper.AspNetCore.Models;
 
-namespace ObjectMapper.Mappers
+namespace AutoMapper.AspNetCore.Mappers
 {
     public class UserMapperProfile : Profile
     {
