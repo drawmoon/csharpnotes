@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace RestApiOdata.Models
+namespace OData.Models
 {
     public class AppDbContext : DbContext
     {

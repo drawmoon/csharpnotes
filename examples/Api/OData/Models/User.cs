@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace RestApiOdata.Models
+namespace OData.Models
 {
     public class User
     {

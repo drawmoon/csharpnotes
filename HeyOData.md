@@ -2,9 +2,7 @@
 
 > OData 定义了一组构建和使用 RESTful API 的最佳实践。 OData 可帮助您在构建 RESTful API 时专注于业务逻辑，而不必担心定义请求和响应头，状态代码，HTTP 方法，URL 约定，媒体类型，有效载荷格式，查询选项等的各种方法。OData 还提供跟踪更改，定义可重用过程的功能/动作以及发送异步/批处理请求的指南。
 
-下面将创建一个基于 OData 的 `ASP.NET Core API` 项目，创建 OData 模型，使用 OData 的查询选项，例如 `按需查询`、`扩展查询`、`过滤查询` 等。
-
-[本文示例项目地址](https://github.com/drawmoon/mynotes/tree/master/examples/WebApi/src/ODataDemo)
+下面将创建一个基于 OData 的 `ASP.NET Core Web API` 项目，.NET 版本 `6.0`。
 
 ## 安装
 
@@ -98,19 +96,14 @@ public class AppDbContext : DbContext
 }
 ```
 
-将数据库上下文添加到容器中
+注册数据库上下文到服务容器中
 
 ```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    // 添加 in-memory 数据库
-    var databaseName = Guid.NewGuid().ToString();
-    services
-        .AddEntityFrameworkInMemoryDatabase()
-        .AddDbContext<AppDbContext>((sp, options) => options.UseInMemoryDatabase(databaseName).UseInternalServiceProvider(sp));
-
-    services.AddControllers();
-}
+// 添加 in-memory 数据库
+var databaseName = Guid.NewGuid().ToString();
+builder.Services
+    .AddEntityFrameworkInMemoryDatabase()
+    .AddDbContext<AppDbContext>((sp, options) => options.UseInMemoryDatabase(databaseName).UseInternalServiceProvider(sp));
 ```
 
 ## 创建 OData 模型
@@ -162,33 +155,13 @@ namespace ODataDemo.Models
 }
 ```
 
-## 添加 OData 服务
+## 注册 OData 服务
 
-在 `Startup.cs` 中配置 OData 服务，和指定 OData 的接口路由
+注册 OData 服务，和指定 OData 启用的查询选项
 
 ```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    // 添加 OData。
-    services.AddOData();
-
-    services.AddControllers();
-}
-
-public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-{
-    app.UseRouting();
-
-    app.UseEndpoints(endpoints =>
-    {
-        endpoints.MapControllers();
-
-        // 在 OData 6.0.0 及以上的版本中默认无法使用这些功能，需要在此处指定启用
-        endpoints.Select().Expand().Filter().Count().OrderBy();
-        // 配置 OData 的路由前缀，用 http://*:5000/odata/[controller] 访问 OData 控制器。
-        endpoints.MapODataRoute("odata", "odata", AppEdmModel.GetModel());
-    });
-}
+builder.Services.AddControllers()
+    .AddOData(options => options.Select().Expand().Filter().OrderBy().SetMaxTop(100).Count());
 ```
 
 ## 创建控制器
@@ -327,29 +300,4 @@ OData 支持请求获取排序的资源。
 ```sh
 # 获取用户列表并根据用户名称排序
 /odata/users?$OrderBy=Name desc
-```
-
-## 使用 Swagger 配置 OData
-
-安装
-
-```bash
-Install-Package OData.Swagger
-```
-
-在`ConfigureServices`中注册服务
-
-```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddOData();
-    
-    services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
-    services.AddSwaggerGen();
-    
-    // 使用 Swagger 配置 OData
-    services.AddOdataSwaggerSupport();
-
-    services.AddControllers();
-}
 ```

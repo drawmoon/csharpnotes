@@ -1,7 +1,7 @@
 ﻿using Microsoft.OData.Edm;
 using Microsoft.OData.ModelBuilder;
 
-namespace RestApiOdata.Models
+namespace OData.Models
 {
     public static class AppEdmModel
     {

@@ -1,11 +1,12 @@
-﻿using Microsoft.AspNet.OData;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using RestApiOdata.Models;
 using System.Linq;
 using System.Threading.Tasks;
+using OData.Models;
+using Microsoft.AspNetCore.OData.Routing.Controllers;
+using Microsoft.AspNetCore.OData.Query;
 
-namespace RestApiOdata.Controllers
+namespace OData.Controllers
 {
     [ApiExplorerSettings(GroupName = "v1")]
     [Route("api/[controller]")]

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace RestApiOdata.Models
+namespace OData.Models
 {
     public class OrderDetail
     {
