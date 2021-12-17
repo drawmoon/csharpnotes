@@ -3,7 +3,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers()
-    // JsonPatch ÒÀÀµ NewtonsoftJson, ĞèÒªÒıÓÃ Microsoft.AspNetCore.Mvc.NewtonsoftJson;
+    // JsonPatch ä¾èµ– NewtonsoftJson, éœ€è¦å¼•ç”¨ Microsoft.AspNetCore.Mvc.NewtonsoftJson;
     .AddNewtonsoftJson();
 
 var app = builder.Build();
