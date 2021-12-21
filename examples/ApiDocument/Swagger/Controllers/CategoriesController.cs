@@ -1,4 +1,4 @@
-﻿using System.Net.Mime;
+using System.Net.Mime;
 using System.Threading.Tasks;
 using ApiDocument.Models;
 using Microsoft.AspNetCore.Http;
@@ -41,7 +41,7 @@ namespace ApiDocument.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public ActionResult<Category> Update([FromRoute] string id, [FromForm, BindRequired] Category categoryInput)
+        public ActionResult<Category> Update([FromRoute] string id, [FromBody, BindRequired] Category categoryInput)
         {
             throw new NotImplementedException();
         }
