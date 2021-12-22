@@ -5,21 +5,23 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+builder.Services.AddRefitClient<IUserApi>()
+    .ConfigureHttpClient(httpClient =>
+    {
+        httpClient.BaseAddress = new Uri("http://localhost:8000");
+    });
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 
-app.MapGet("/", () =>
+app.MapGet("/", (IUserApi userApi) =>
 {
-    var userApi = RestService.For<IUserApi>("http://localhost:8000");
-
     return userApi.GetAllUser();
 });
 
-app.MapGet("/{id}", ([FromRoute] int id) =>
+app.MapGet("/{id}", (IUserApi userApi, [FromRoute] int id) =>
 {
-    var userApi = RestService.For<IUserApi>("http://localhost:8000");
-
     return userApi.GetUser(id);
 });
 
