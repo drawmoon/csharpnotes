@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhysicalFileProvider", "PhysicalFileProvider\PhysicalFileProvider.csproj", "{65BA0A07-FB16-4665-B69B-9D9982F15855}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhysicalFileProvider", "PhysicalFileProvider.csproj", "{65BA0A07-FB16-4665-B69B-9D9982F15855}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

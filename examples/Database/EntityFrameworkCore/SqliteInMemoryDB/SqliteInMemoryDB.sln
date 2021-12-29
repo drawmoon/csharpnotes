@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqliteInMemoryDB", "SqliteInMemoryDB\SqliteInMemoryDB.csproj", "{0CAFFBCE-06CF-4AD1-99F1-2646AC86B4C7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqliteInMemoryDB", "SqliteInMemoryDB.csproj", "{0CAFFBCE-06CF-4AD1-99F1-2646AC86B4C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
