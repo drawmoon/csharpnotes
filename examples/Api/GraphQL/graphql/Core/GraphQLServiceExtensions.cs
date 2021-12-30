@@ -1,12 +1,12 @@
-﻿using ApiGraphQL.GraphQL.Mutation;
-using ApiGraphQL.GraphQL.Query;
-using GraphQL;
+﻿using GraphQL;
 using GraphQL.NewtonsoftJson;
 using GraphQL.Types;
+using HttpApi.Queries;
+using HttpApi.Types;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ApiGraphQL.GraphQL.Core
+namespace HttpApi.Core
 {
     public static class GraphQLServiceExtensions
     {
@@ -15,11 +15,8 @@ namespace ApiGraphQL.GraphQL.Core
             // 添加 GraphType
             services.AddSingleton<OrderGraphType>();
             services.AddSingleton<OrderDetailGraphType>();
-            services.AddSingleton<PastryGraphType>();
-            services.AddSingleton<DonutGraphType>();
 
             services.AddSingleton<GraphQuery>();
-            services.AddSingleton<GraphMutation>();
 
             services.AddSingleton<ISchema, GraphQLSchema>();
 

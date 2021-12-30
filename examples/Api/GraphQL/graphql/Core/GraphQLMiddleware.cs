@@ -9,7 +9,7 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace ApiGraphQL.GraphQL.Core
+namespace HttpApi.Core
 {
     public class GraphQLMiddleware
     {

@@ -1,6 +1,6 @@
 ﻿using GraphQL.Types;
 
-namespace ApiGraphQL.GraphQL.Query
+namespace HttpApi.Queries
 {
     public partial class GraphQuery : ObjectGraphType<object>
     {
@@ -10,7 +10,6 @@ namespace ApiGraphQL.GraphQL.Query
 
             InitOrderQuery();
             InitOrderDetailQuery();
-            InitPastryQuery();
         }
     }
 }

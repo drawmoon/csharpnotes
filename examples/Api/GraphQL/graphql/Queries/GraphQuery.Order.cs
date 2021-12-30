@@ -1,10 +1,11 @@
-﻿using ApiGraphQL.Models;
-using GraphQL;
+﻿using GraphQL;
 using GraphQL.Types;
+using HttpApi.Entities;
+using HttpApi.Types;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ApiGraphQL.GraphQL.Query
+namespace HttpApi.Queries
 {
     public partial class GraphQuery
     {
@@ -12,7 +13,7 @@ namespace ApiGraphQL.GraphQL.Query
         {
             FieldAsync<ListGraphType<OrderGraphType>>("Orders", "获取 Orders", resolve: async context =>
             {
-                using var dbContext = context.RequestServices.GetService<AppDbContext>();
+                var dbContext = context.RequestServices.GetRequiredService<AppDbContext>();
                 return await dbContext.Orders.ToListAsync();
             });
 
@@ -24,7 +25,8 @@ namespace ApiGraphQL.GraphQL.Query
                 async context =>
                 {
                     var id = context.GetArgument<int>(nameof(Order.Id));
-                    using var dbContext = context.RequestServices.GetService<AppDbContext>();
+
+                    var dbContext = context.RequestServices.GetRequiredService<AppDbContext>();
                     return await dbContext.Orders.FirstOrDefaultAsync(o => o.Id == id);
                 });
         }

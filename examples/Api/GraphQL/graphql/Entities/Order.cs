@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace ApiGraphQL.Models
+﻿namespace HttpApi.Entities
 {
     public class Order
     {

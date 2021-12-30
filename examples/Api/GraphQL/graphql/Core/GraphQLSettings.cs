@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace ApiGraphQL.GraphQL.Core
+namespace HttpApi.Core
 {
     public class GraphQLSettings
     {

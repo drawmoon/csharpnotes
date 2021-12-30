@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
 
-namespace ApiGraphQL.GraphQL.Core
+namespace HttpApi.Core
 {
     public class GraphQLRequest
     {

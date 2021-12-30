@@ -1,10 +1,10 @@
-﻿using ApiGraphQL.Models;
-using GraphQL.Types;
+﻿using GraphQL.Types;
+using HttpApi.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System.Linq;
 
-namespace ApiGraphQL.GraphQL
+namespace HttpApi.Types
 {
     public class OrderDetailGraphType : ObjectGraphType<OrderDetail>
     {
@@ -19,7 +19,7 @@ namespace ApiGraphQL.GraphQL
 
             FieldAsync<OrderGraphType>(nameof(OrderDetail.Order), "OrderDetail 所属的 Order", resolve: async context =>
             {
-                using var dbContext = context.RequestServices.GetService<AppDbContext>();
+                var dbContext = context.RequestServices.GetRequiredService<AppDbContext>();
                 return await dbContext.Orders.Where(o => o.Id == context.Source.OrderId).ToListAsync();
             });
         }

@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace ApiGraphQL.Models
+namespace HttpApi.Entities
 {
     public class AppDbContext : DbContext
     {

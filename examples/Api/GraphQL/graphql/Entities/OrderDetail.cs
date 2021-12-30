@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ApiGraphQL.Models
+namespace HttpApi.Entities
 {
     public class OrderDetail
     {
