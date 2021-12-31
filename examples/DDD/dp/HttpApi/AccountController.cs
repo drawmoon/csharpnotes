@@ -1,6 +1,6 @@
-﻿using DomainPrimitive.Application.Command;
+﻿using DomainPrimitive.Application;
+using DomainPrimitive.Application.Command;
 using DomainPrimitive.Application.Dto;
-using DomainPrimitive.Domain.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

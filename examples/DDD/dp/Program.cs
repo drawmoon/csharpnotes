@@ -1,8 +1,7 @@
+using DomainPrimitive.Application;
 using DomainPrimitive.Domain.Model.User;
-using DomainPrimitive.Domain.Services;
 using DomainPrimitive.EntityFrameworkCore;
 using DomainPrimitive.EntityFrameworkCore.Repositories;
-using DomainPrimitive.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

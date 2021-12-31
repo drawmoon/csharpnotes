@@ -1,10 +1,14 @@
 ﻿using DomainPrimitive.Application.Command;
 using DomainPrimitive.Application.Dto;
 using DomainPrimitive.Domain.Model.User;
-using DomainPrimitive.Domain.Services;
 using Mapster;
 
-namespace DomainPrimitive.Services;
+namespace DomainPrimitive.Application;
+
+public interface IAccountService
+{
+    Task<UserDto> Register(CreateUserCommand createUserCommand);
+}
 
 public class AccountService : IAccountService
 {
