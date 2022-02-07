@@ -1,4 +1,4 @@
-﻿namespace DomainPrimitive.Domain.Model.User;
+﻿namespace DDDExample.Domain.User.Model;
 
 public class Username
 {

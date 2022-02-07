@@ -1,8 +1,8 @@
-﻿using DomainPrimitive.Domain.Model.User;
-using DomainPrimitive.EntityFrameworkCore.Entities;
+﻿using DDDExample.Domain.User.Model;
+using DDDExample.Domain.User.Repository;
 using Microsoft.EntityFrameworkCore;
 
-namespace DomainPrimitive.EntityFrameworkCore.Repositories;
+namespace DDDExample.EntityFrameworkCore.Repositories;
 
 public class UserRepository : BaseRepository<IdentityUser>, IUserRepository
 {
@@ -20,7 +20,7 @@ public class UserRepository : BaseRepository<IdentityUser>, IUserRepository
         return await Entities.FirstOrDefaultAsync(x => x.Email == email);
     }
 
-    public async Task<IdentityUser> Register(IdentityUser user)
+    public async Task<IdentityUser> Add(IdentityUser user)
     {
         await Entities.AddAsync(user);
         await SaveChangesAsync();

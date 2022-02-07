@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using DDDExample.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
-namespace DomainPrimitive.EntityFrameworkCore.Repositories
+namespace DDDExample.EntityFrameworkCore.Repositories
 {
     public class BaseRepository<TEntity> where TEntity : class, new()
     {

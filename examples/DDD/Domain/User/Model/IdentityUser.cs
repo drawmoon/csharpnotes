@@ -1,4 +1,4 @@
-﻿namespace DomainPrimitive.EntityFrameworkCore.Entities;
+﻿namespace DDDExample.Domain.User.Model;
 
 public class BaseIdentityUser<TKey>
 {

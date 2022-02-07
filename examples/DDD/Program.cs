@@ -1,7 +1,9 @@
-using DomainPrimitive.Application;
-using DomainPrimitive.Domain.Model.User;
-using DomainPrimitive.EntityFrameworkCore;
-using DomainPrimitive.EntityFrameworkCore.Repositories;
+using DDDExample.Admin.Service;
+using DDDExample.Domain.User.Factory;
+using DDDExample.Domain.User.Repository;
+using DDDExample.Domain.User.Service;
+using DDDExample.EntityFrameworkCore;
+using DDDExample.EntityFrameworkCore.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,8 +16,9 @@ builder.Services
     .AddDbContext<AppDbContext>(options => options.UseInMemoryDatabase(databaseName));
 
 builder.Services.AddTransient<IUserRepository, UserRepository>();
-builder.Services.AddTransient<IAccountService, AccountService>();
 builder.Services.AddTransient<IUserFactory, UserFactory>();
+builder.Services.AddTransient<IUserService, UserService>();
+builder.Services.AddTransient<IAccountService, AccountService>();
 
 builder.Services.AddControllers();
 

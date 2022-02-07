@@ -1,7 +1,7 @@
-﻿using DomainPrimitive.EntityFrameworkCore.Entities;
-using DomainPrimitive.EntityFrameworkCore.Repositories;
+﻿using DDDExample.Domain.User.Model;
+using DDDExample.Domain.User.Repository;
 
-namespace DomainPrimitive.Domain.Model.User;
+namespace DDDExample.Domain.User.Factory;
 
 public interface IUserFactory
 {

@@ -1,7 +1,7 @@
-﻿using DomainPrimitive.EntityFrameworkCore.Entities;
+﻿using DDDExample.Domain.User.Model;
 using Microsoft.EntityFrameworkCore;
 
-namespace DomainPrimitive.EntityFrameworkCore;
+namespace DDDExample.EntityFrameworkCore;
 
 public class AppDbContext : DbContext
 {
