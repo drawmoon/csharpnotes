@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using Microsoft.Extensions.Configuration.Ini;
-using Nacos.Microsoft.Extensions.Configuration;
+using Nacos.Config;
 
 namespace NacosExtensions.Configuration
 {

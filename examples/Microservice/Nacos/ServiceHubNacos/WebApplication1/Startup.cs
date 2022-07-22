@@ -29,7 +29,7 @@ namespace WebApplication1
         {
             // 添加初始化Nacos配置的启动任务
             services.AddTransient<IStartupTask, InitNacosConfigTask>();
-            
+
             // 添加Nacos服务
             services.AddNacosAspNetCore(Configuration);
 
